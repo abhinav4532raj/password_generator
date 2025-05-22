@@ -1,0 +1,187 @@
+/* Global Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Root Variables */
+:root {
+    --primary-purple: hsl(270, 80%, 50%);
+    --dark-purple: hsl(270, 70%, 30%);
+    --light-purple: hsl(270, 60%, 60%);
+    --soft-gold: hsl(45, 100%, 55%);
+    --white: hsl(0, 0%, 100%);
+    --dark-text: hsl(220, 15%, 20%);
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, var(--dark-purple), var(--primary-purple));
+    padding: 2rem;
+}
+
+.container {
+    width: 90%;
+    max-width: 450px;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+
+h1 {
+    color: var(--dark-text);
+    text-transform: uppercase;
+    font-size: 1.6rem;
+}
+
+/* Display Box */
+.display-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--light-purple);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1.5rem 0;
+    position: relative;
+}
+
+.Display {
+    flex-grow: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0.8rem;
+    color: var(--white);
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.copyBtn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--soft-gold);
+    font-size: 1.2rem;
+}
+
+/* Input Section */
+.input-container {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.length-container, .strengthcontainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: var(--dark-text);
+    font-size: 1.2rem;
+}
+
+.indicator {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: var(--soft-gold);
+}
+
+.generateButton {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-purple);
+    border-radius: 10px;
+    color: var(--white);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.generateButton:hover {
+    background: var(--dark-purple);
+}
+
+/* Checkbox */
+.check {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 1rem 0;
+}
+.check input {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--primary-purple);
+    border-radius: 4px;
+    cursor: pointer;
+    position: relative;
+}
+.check input:checked {
+    background: var(--primary-purple);
+}
+.check input:checked::before {
+    content: '✓';
+    position: absolute;
+    color: var(--white);
+    font-size: 1rem;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.check label {
+    color: var(--dark-text);
+    font-size: 1.1rem;
+}
+
+/* Slider */
+.slider {
+    width: 100%;
+    height: 0.75rem;
+    background: var(--light-purple);
+    border-radius: 5px;
+    appearance: none;
+    margin: 1.5rem 0;
+}
+.slider::-webkit-slider-thumb, .slider::-moz-range-thumb {
+    appearance: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 50%;
+    background: var(--soft-gold);
+    cursor: pointer;
+    transition: 0.2s;
+}
+.slider::-webkit-slider-thumb:hover, .slider::-moz-range-thumb:hover {
+    background: var(--primary-purple);
+}
+
+/* Copy Tooltip */
+.copy-tooltip {
+    position: absolute;
+    background: var(--dark-purple);
+    color: var(--soft-gold);
+    font-size: 1rem;
+    top: -35px;
+    right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transform: scale(0);
+    transition: 0.2s;
+}
+.copy-tooltip.active {
+    opacity: 1;
+    transform: scale(1);
+}
